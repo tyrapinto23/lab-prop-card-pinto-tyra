@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+html, body {
+  min-height: 100%;
+}
+
+
+/* TYPE DEFAULTS */
+body {
+  font: 300 1em/1 'Roboto', helvetica, arial, sans-serif;
+  background-image: linear-gradient(#eee, #bbb);
+  color: #222;
+  padding: 1em;
+}
+
+/* UTILITY CLASSES */
+.inline-list {
+  display: flex;
+  justify-content: flex-start;
+}
+.btn {
+  display: block;
+  background-color: slateblue;
+  color: white;
+  padding: 0.5em;
+  font-size: 1.25em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0.125em 0.125em 0 rgba(0,0,0,0.8);
+}
+.btn:hover {
+  text-shadow: none;
+}
+.contact {
+  padding: 1em;
+}
+.room {
+  flex-grow: 1;
+  text-align: center;
+}
+.room:first-child {
+  flex-grow: 0;
+}
+
+/* SPECIFIC CLASSES */
+/* .properties {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+} */
+
+/* 
+justify-*: horizontal (left/right)
+align-*: vertical (top/bottom)
+*-content: referring to all items as a group
+*-items: referring to each item respectively
+*-self: an item referring to itself
+*/
+
+
+
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 1em rgba(0,0,0,0.2);
+  /* width: auto;
+  max-width: 30em; */
+  /* width: 30em; */
+  margin: 1em 0.5em;
+  border-radius: 0.5em;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.property-group {
+  padding: 1em;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+.property-group:last-child {
+  border-bottom: none;
+}
+.room-group {
+  flex-grow: 1;
+}
+
+.room-icon {
+  height: 2em;
+  margin-right: 0.5em;
+}
+.address {
+  font-weight: 300;
+  font-size: 1em;
+  order: 3;
+  margin: 0;
+}
+.cost {
+  font-size: 2em;
+  margin: 0.5em 0;
+  order: 2;
+}
+.cost::before {
+  content: "$";
+}
+.features {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  order: 1;
+}
+/*  */
+.realtor {
+  display: flex;
+  line-height: 1.5;
+}
+.realtor-face {
+  background-color: lightcoral;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1em;
+}
+.realtor-name {
+  font-weight: 700;
+}
+.realtor-num a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+@media screen and (min-width: 540px) {
+  body {
+    background-image: linear-gradient(orange, rebeccapurple);
+    font-size: 1.2em;
+  }
+  .features {
+    display: flex;
+  }
+  .features > li:not(:last-child)::after {
+    content: "\2219";
+    display: inline-block;
+    margin: 0 0.5em;
+  }
+}
+/* Create one more media query */
+
+@media screen and (min-width:320px) {
+
+  body{background-image: linear-gradient(white, rebeccapurple);}
+ 
+ .room-group { font-size: small;}
+ }
+ 
+ @media screen and (min-width: 540px) {
+   body {
+     background-image: linear-gradient(orange, rebeccapurple);
+     font-size: 1.2em;
+   }
+ 
+   .room-group { font-size: 1.2em;}
+ }
+   
+   .features {
+     display: flex;
+   }
+   .features > li:not(:last-child)::after {
+     content: "\2219";
+     display: inline-block;
+     margin: 0 0.5em;
+   }
+ }
+ 
+ @media screen and (min-width: 720px) {
+   .card {
+     width: 34em;
+     margin: 0 auto;
+   }
+ }
+ 
+ @media screen and (min-width: 1024px) {
+   .card {
+     width: 39em;
+     margin: 0 auto;
+   }
+ }
+
+/* 
+LAB 1:
+- Using device mode, evaluate the 320px case (smallest), make adjustments as needed
+- Scele up the size slowly to determine where the first breakpoint should go - adjust my default
+- Make the necessary adjustments to make this look pretty
+- Continue to scale up and determine one more breakpoint for this layout
+- Again, necessary adjustments
+
+LAB 2 (can be done after class):
+- Take a look at 3 news website and evaluate two pages (article, index/list)
+*/
